@@ -5,7 +5,7 @@ public abstract class MovableEntity
     public int Y { get; set; }
     public char Symbol { get; set; }
 
-    public char[] Walls { get; protected set; } = ['*', '|', '-', '█'];
+    public char[] Walls { get; protected set; } = ['█'];
 
     public MovableEntity(int x, int y, char symbol, World world)
     {

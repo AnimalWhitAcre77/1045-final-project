@@ -52,24 +52,21 @@ public class Screen
 
         foreach (MovableEntity entity in ParentWorld.Entities)
         {
-            if (entity.X < 0 || entity.X > ParentWorld.Width) { continue; }
-            if (entity.Y < 0 || entity.Y > ParentWorld.Height) { continue; }
+            if (entity.X - X < 0 || entity.X - X > ParentWorld.Width) { continue; }
+            if (entity.Y - Y < 0 || entity.Y - Y > ParentWorld.Height) { continue; }
             entities.Add(entity);
         }
 
         return entities;
     }
 
-    public void MoveScreen(int deltaX, int deltaY)
+    public void Move(int deltaX, int deltaY)
     {
-        if (IsLegalPosition(X + deltaX, Y + deltaY))
-        {
-            X += deltaX;
-            Y += deltaY;
-        }
+        if (IsLegalPosition(X + deltaX, Y)) {X += deltaX;}
+        if (IsLegalPosition(X, Y + deltaY)) {Y += deltaY;}
     }
 
-    public void PrintScreen()
+    public void Print()
     {
         Console.SetCursorPosition(0, 0);
 
@@ -84,7 +81,7 @@ public class Screen
 
         foreach (MovableEntity entity in GetEntitiesOnScreen()) // Sprites
         {
-            Console.SetCursorPosition(entity.X, entity.Y);
+            Console.SetCursorPosition(entity.X - X, entity.Y - Y);
             Console.Write(entity.Symbol);
         }
 
