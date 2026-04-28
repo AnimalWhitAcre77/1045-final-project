@@ -1,8 +1,7 @@
 class Player(int x, int y, char symbol, ConsoleColor symbolColor, World parentWorld) : MovableEntity(x, y, symbol, symbolColor, parentWorld)
 {
     public int Score { get; set; } = 0;
-    public int Health { get; set; } = 100;
-
+    public List<Type> DeadlyEntities = new List<Type> {typeof(Charger)};
     public override void StepFrame(ConsoleKeyInfo input)
     {
         switch(input.Key)

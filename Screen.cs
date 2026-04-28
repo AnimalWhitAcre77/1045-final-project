@@ -66,10 +66,10 @@ public class Screen
         if (IsLegalPosition(X, Y + deltaY)) {Y += deltaY;}
     }
 
-    public void Print()
+    public void Print(ConsoleColor textColor)
     {
         Console.SetCursorPosition(0, 0);
-        Console.ForegroundColor = ConsoleColor.White;
+        Console.ForegroundColor = textColor;
 
         for (int y=Y; y<Y + Height; y++) // World/Background
         {
