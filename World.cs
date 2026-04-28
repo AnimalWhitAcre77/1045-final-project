@@ -36,7 +36,7 @@ public class World
             {
                 if (worldText[y][x] == '@')
                 {
-                    Entities.Insert(0, new Player(x, y, '@', this));
+                    Entities.Insert(0, new Player(x, y, '@', ConsoleColor.Cyan, this));
                     Grid[x, y] = ' ';
                 }
                 else

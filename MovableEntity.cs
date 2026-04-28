@@ -4,14 +4,16 @@ public abstract class MovableEntity
     public int X { get; set; }
     public int Y { get; set; }
     public char Symbol { get; set; }
+    public ConsoleColor SymbolColor { get; set; }
 
     public char[] Walls { get; protected set; } = ['█'];
 
-    public MovableEntity(int x, int y, char symbol, World world)
+    public MovableEntity(int x, int y, char symbol, ConsoleColor symbolColor, World world)
     {
         X = x;
         Y = y;
         Symbol = symbol;
+        SymbolColor = symbolColor;
         ParentWorld = world;
     }
 

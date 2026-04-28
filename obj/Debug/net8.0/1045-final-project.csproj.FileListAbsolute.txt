@@ -13,3 +13,18 @@ c:\Users\The Fantastic Mr. E\git-code-dir\1045-final-project\bin\Debug\net8.0\10
 c:\Users\The Fantastic Mr. E\git-code-dir\1045-final-project\bin\Debug\net8.0\1045-final-project.pdb
 C:\Users\The Fantastic Mr. E\git-code-dir\1045-final-project\obj\Debug\net8.0\1045-final-project.genruntimeconfig.cache
 C:\Users\The Fantastic Mr. E\git-code-dir\1045-final-project\obj\Debug\net8.0\ref\1045-final-project.dll
+H:\Programming\git-code-dir\C# Projects\1045-final-project\bin\Debug\net8.0\1045-final-project.exe
+H:\Programming\git-code-dir\C# Projects\1045-final-project\bin\Debug\net8.0\1045-final-project.deps.json
+H:\Programming\git-code-dir\C# Projects\1045-final-project\bin\Debug\net8.0\1045-final-project.runtimeconfig.json
+H:\Programming\git-code-dir\C# Projects\1045-final-project\bin\Debug\net8.0\1045-final-project.dll
+H:\Programming\git-code-dir\C# Projects\1045-final-project\bin\Debug\net8.0\1045-final-project.pdb
+H:\Programming\git-code-dir\C# Projects\1045-final-project\obj\Debug\net8.0\1045-final-project.GeneratedMSBuildEditorConfig.editorconfig
+H:\Programming\git-code-dir\C# Projects\1045-final-project\obj\Debug\net8.0\1045-final-project.AssemblyInfoInputs.cache
+H:\Programming\git-code-dir\C# Projects\1045-final-project\obj\Debug\net8.0\1045-final-project.AssemblyInfo.cs
+H:\Programming\git-code-dir\C# Projects\1045-final-project\obj\Debug\net8.0\1045-final-project.csproj.CoreCompileInputs.cache
+H:\Programming\git-code-dir\C# Projects\1045-final-project\obj\Debug\net8.0\1045-final-project.sourcelink.json
+H:\Programming\git-code-dir\C# Projects\1045-final-project\obj\Debug\net8.0\1045-final-project.dll
+H:\Programming\git-code-dir\C# Projects\1045-final-project\obj\Debug\net8.0\refint\1045-final-project.dll
+H:\Programming\git-code-dir\C# Projects\1045-final-project\obj\Debug\net8.0\1045-final-project.pdb
+H:\Programming\git-code-dir\C# Projects\1045-final-project\obj\Debug\net8.0\1045-final-project.genruntimeconfig.cache
+H:\Programming\git-code-dir\C# Projects\1045-final-project\obj\Debug\net8.0\ref\1045-final-project.dll

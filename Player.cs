@@ -1,4 +1,4 @@
-class Player(int x, int y, char symbol, World parentWorld) : MovableEntity(x, y, symbol, parentWorld)
+class Player(int x, int y, char symbol, ConsoleColor symbolColor, World parentWorld) : MovableEntity(x, y, symbol, symbolColor, parentWorld)
 {
     public int Score { get; set; } = 0;
     public int Health { get; set; } = 100;

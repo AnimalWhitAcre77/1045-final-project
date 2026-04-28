@@ -69,6 +69,7 @@ public class Screen
     public void Print()
     {
         Console.SetCursorPosition(0, 0);
+        Console.ForegroundColor = ConsoleColor.White;
 
         for (int y=Y; y<Y + Height; y++) // World/Background
         {
@@ -82,6 +83,7 @@ public class Screen
         foreach (MovableEntity entity in GetEntitiesOnScreen()) // Sprites
         {
             Console.SetCursorPosition(entity.X - X, entity.Y - Y);
+            Console.ForegroundColor = entity.SymbolColor;
             Console.Write(entity.Symbol);
         }
 

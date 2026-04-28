@@ -5,15 +5,15 @@
 █  @ <-- (this is you)       █                            █
 █                            █                            █
 █                                                         █
-█ Move with WASD arrow keys. █                            █
+█ Move with WASD/Arrow Keys. █                            █
 █                            █                            █
 ██████████████████████████████                            █
 █                            █                            █
-█  Welcome to the Dungeon!   █                            █
+█                            █                            █
 █                            █     █   █                  █
-█    <-- (this isn't you)    █                            █
+█                            █                            █
 █                            █           █                █
 █                                  ██████                 █
-█ Move with WASD arrow keys.                              █
+█                                                         █
 █                            █                            █
 ███████████████████████████████████████████████████████████
