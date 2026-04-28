@@ -52,8 +52,8 @@ public class Screen
 
         foreach (MovableEntity entity in ParentWorld.Entities)
         {
-            if (entity.X - X < 0 || entity.X - X > ParentWorld.Width) { continue; }
-            if (entity.Y - Y < 0 || entity.Y - Y > ParentWorld.Height) { continue; }
+            if ((entity.X - X) < 0 || (entity.X - X) >= Width) { continue; }
+            if ((entity.Y - Y) < 0 || (entity.Y - Y) >= Height) { continue; }
             entities.Add(entity);
         }
 

@@ -1,12 +1,12 @@
 ███████████████████████████████████████████████████████████
+█                               Red is bad by the way.    █
+█  Welcome to the Dungeon!                                █
+█                            ██████████████████████████   █
+█  @ -- (this is you)        █                ██ ███^██   █
 █                            █                            █
-█  Welcome to the Dungeon!   █                            █
 █                            █                            █
-█  @ <-- (this is you)       █                            █
-█                            █                            █
-█                                                         █
-█ Move with WASD/Arrow Keys. █                            █
-█                            █                            █
+█ MOVE with WASD/Arrow Keys. █                ██v███ ██   █
+█                            ██████████████████████████████
 ██████████████████████████████                            █
 █                            █                            █
 █                            █                            █

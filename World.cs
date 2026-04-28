@@ -34,14 +34,31 @@ public class World
         {
             for (int x=0; x<Width; x++)
             {
-                if (worldText[y][x] == '@')
+                switch (worldText[y][x])
                 {
-                    Entities.Insert(0, new Player(x, y, '@', ConsoleColor.Cyan, this));
-                    Grid[x, y] = ' ';
-                }
-                else
-                {
-                    Grid[x, y] = worldText[y][x];
+                    case '@': // Player
+                        Entities.Insert(0, new Player(x, y, '@', ConsoleColor.Cyan, this));
+                        Grid[x, y] = ' ';
+                        break;
+                    case '^': // Charger
+                        Entities.Add(new Charger(x, y, '^', ConsoleColor.Red, 0, this));
+                        Grid[x, y] = ' ';
+                        break;
+                    case '<':
+                        Entities.Add(new Charger(x, y, '<', ConsoleColor.Red, 1, this));
+                        Grid[x, y] = ' ';
+                        break;
+                    case 'v':
+                        Entities.Add(new Charger(x, y, 'v', ConsoleColor.Red, 2, this));
+                        Grid[x, y] = ' ';
+                        break;
+                    case '>':
+                        Entities.Add(new Charger(x, y, '>', ConsoleColor.Red, 3, this));
+                        Grid[x, y] = ' ';
+                        break;
+                    default:
+                        Grid[x, y] = worldText[y][x];
+                        break;
                 }
             }
         }
