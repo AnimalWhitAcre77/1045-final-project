@@ -2,11 +2,19 @@
 Player player;
 Screen screen;
 
+//   CODE FOR FINDING USABLE CHARACTERS
+//for (int x=0; x<200; x++)
+//{
+//    for (int i=0; i<100; i++)
+//        Console.Write((char)(i + (x*100)));
+//    Console.WriteLine();
+//}
+//Console.ReadLine();
+
 LoadWorld("World_1.txt");
 
 Console.ForegroundColor = ConsoleColor.White;
 
-Console.WriteLine("Expand the terminal before starting.");
 Console.Write("Press any key to wake up... ");
 
 ConsoleKeyInfo input;
