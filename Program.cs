@@ -27,28 +27,22 @@ do
     screen.Move((player.X - screen.X - (screen.Width / 2)) / (screen.Width / 5), (player.Y - screen.Y - (screen.Height / 2)) / (screen.Height / 5));
     screen.Print(ConsoleColor.White);
 
-    // Check if the player died
-    foreach (MovableEntity entity in world.Entities[1..])
+    // Check Player Collisions
+    if (world.Entities[0].GetType() != typeof(Player))
     {
-        if (player.DeadlyEntities.Contains(entity.GetType()))
-        {
-            if (entity.X == player.X && entity.Y == player.Y)
-            {
-                screen.Print(ConsoleColor.DarkGray);
+        screen.Print(ConsoleColor.DarkGray);
 
-                Console.SetCursorPosition(0, screen.Height + 1);
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("You died!");
-                Console.Write("Press any key to wake up: ");
+        Console.SetCursorPosition(0, screen.Height + 1);
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("You died!");
+        Console.Write("Press any key to wake up: ");
 
-                Console.ReadKey(true);
+        Console.ReadKey(true);
 
-                LoadWorld("World_1.txt");
-                break;
-            }
-        }
+        LoadWorld("World_1.txt");
     }
 }
+
 while (input.Key != ConsoleKey.Escape);
 
 void LoadWorld(string filePath)

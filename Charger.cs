@@ -26,5 +26,10 @@ class Charger(int x, int y, char symbol, ConsoleColor symbolColor, int direction
                 break;
         }
         Symbol = DirectionSymbols[Direction];
+
+        if (X == player.X && Y == player.Y)
+        {
+            ParentWorld.GarbageCollection.Push(player);
+        }
     }
 }
