@@ -27,7 +27,7 @@ class Charger(int x, int y, char symbol, ConsoleColor symbolColor, int direction
         }
         Symbol = DirectionSymbols[Direction];
 
-        if (X == player.X && Y == player.Y)
+        if (X == player.X && Y == player.Y) // Collision happens here so player doesn't collide with where enemies were
         {
             ParentWorld.GarbageCollection.Push(player);
         }

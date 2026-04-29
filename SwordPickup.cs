@@ -1,6 +1,6 @@
 class SwordPickUp(int x, int y, char symbol, ConsoleColor symbolColor, World parentWorld) : MovableEntity(x, y, symbol, symbolColor, parentWorld)
 {
-    public List<Type> DeadlyEntities = new List<Type> {typeof(Player)};
+    public List<Type> DeadlyEntityTypes = new List<Type> {typeof(Player)}; // don't need to use this because location of player is known.
     public override void StepFrame(ConsoleKeyInfo input)
     {
         Player player = (Player)ParentWorld.Entities[0];
