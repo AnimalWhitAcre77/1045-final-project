@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1OgIY5jLDWs=",
+  "dgSpecHash": "UTYwq0qaRV0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\The Fantastic Mr. E\\git-code-dir\\1045-final-project\\1045-final-project.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\The Fantastic Mr. E\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.24\\microsoft.netcore.app.ref.8.0.24.nupkg.sha512",
-    "C:\\Users\\The Fantastic Mr. E\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.24\\microsoft.windowsdesktop.app.ref.8.0.24.nupkg.sha512",
-    "C:\\Users\\The Fantastic Mr. E\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.24\\microsoft.aspnetcore.app.ref.8.0.24.nupkg.sha512",
-    "C:\\Users\\The Fantastic Mr. E\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.24\\microsoft.netcore.app.host.win-x64.8.0.24.nupkg.sha512"
-  ],
+  "projectFilePath": "H:\\Programming\\git-code-dir\\C# Projects\\1045-final-project\\1045-final-project.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

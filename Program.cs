@@ -7,14 +7,20 @@
 //}
 //Console.ReadLine();
 
-// box chars ═║╔╗╚╝╠╣╦╩╬
+// box chars ═║╔╗╚╝╠╣╦╩╬ ▒
+
+using System.Threading;
+
 World world;
 Player player;
 Screen screen;
 
 (int score, Weapons heldWeapon) playerData = (0, 0); // Used to give the player correct info between levels
 
-LoadWorld("World_1.txt");
+string[] worlds = ["World_1.txt", "World_2.txt"];
+int currentWorld = 0;
+
+LoadWorld(worlds[currentWorld]);
 
 Console.ForegroundColor = ConsoleColor.White;
 Console.Clear();
@@ -62,6 +68,12 @@ do
 
         LoadWorld("World_1.txt"); // reset world
     }
+
+    // Check if the next world needs loaded
+    if (world.WorldCompleted)
+    {
+        TransitionWorld(currentWorld + 1);
+    }
 }
 
 while (input.Key != ConsoleKey.Escape);
@@ -73,6 +85,26 @@ void LoadWorld(string filePath)
     screen = new(world, 30, 10, 0, 0);
 
     (player.Score, player.HeldWeapon) = playerData; // set to last save point info
+}
+
+void TransitionWorld(int newLevelIndex)
+{
+    Thread.Sleep(500);
+    screen.Print(1, 1, ConsoleColor.Gray);
+    Thread.Sleep(500);
+    screen.Print(1, 1, ConsoleColor.DarkGray);
+    Thread.Sleep(500);
+    screen.Print(1, 1, ConsoleColor.Black);
+
+    playerData = (player.Score, player.HeldWeapon);
+    currentWorld = newLevelIndex;
+    LoadWorld(worlds[currentWorld]);
+
+    Thread.Sleep(500);
+    screen.Print(1, 1, ConsoleColor.DarkGray);
+    Thread.Sleep(500);
+    screen.Print(1, 1, ConsoleColor.Gray);
+    Thread.Sleep(500);
 }
 
 void WriteMenuLine(int lineIndex, string text)

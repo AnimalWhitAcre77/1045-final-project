@@ -5,9 +5,12 @@ public class World
     public int Width { get; set; }
     public int Height { get; set; }
     public char[,] Grid { get; set; }
+
     public List<MovableEntity> Entities { get; set; } = [];
     public Stack<(int, MovableEntity)> EntitiesAddList { get; set; } = [];
     public Stack<MovableEntity> GarbageCollection { get; set; } = [];
+
+    public bool WorldCompleted { get; set; } = false;
 
     public World(int width, int height)
     {
@@ -62,6 +65,10 @@ public class World
                         break;
                     case '┬':
                         Entities.Add(new SwordPickUp(x, y, '┬', ConsoleColor.Yellow, this));
+                        Grid[x, y] = ' ';
+                        break;
+                    case 'I':
+                        Entities.Add(new Goal(x, y, 'I', ConsoleColor.Green, this));
                         Grid[x, y] = ' ';
                         break;
                     default:
