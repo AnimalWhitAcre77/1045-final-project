@@ -25,5 +25,9 @@ class Sword(int x, int y, char symbol, ConsoleColor symbolColor, World parentWor
                 (X, Y) = (player.X + 1, player.Y);
                 break;
         }
+
+        // If the sword would collide with a wall, hide it
+        if (Walls.Contains(ParentWorld.Grid[X, Y])) { IsVisible = false; }
+        else { IsVisible = true; }
     }
 }

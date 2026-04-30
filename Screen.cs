@@ -66,25 +66,28 @@ public class Screen
         if (IsLegalPosition(X, Y + deltaY)) {Y += deltaY;}
     }
 
-    public void Print(ConsoleColor textColor)
+    public void Print(int xPos, int yPos, ConsoleColor textColor)
     {
-        Console.SetCursorPosition(0, 0);
+        Console.SetCursorPosition(xPos, yPos);
         Console.ForegroundColor = textColor;
 
-        for (int y=Y; y<Y + Height; y++) // World/Background
+        for (int y=0; y<Height; y++) // World/Background
         {
-            for (int x=X; x<X + Width; x++)
+            Console.SetCursorPosition(xPos, y + yPos);
+            for (int x=0; x<Width; x++)
             {
-                Console.Write(ParentWorld.Grid[x, y]);
+                Console.Write(ParentWorld.Grid[x+X, y+Y]);
             }
-            Console.WriteLine();
         }
 
         foreach (MovableEntity entity in GetEntitiesOnScreen()) // Sprites
         {
-            Console.SetCursorPosition(entity.X - X, entity.Y - Y);
-            Console.ForegroundColor = entity.SymbolColor;
-            Console.Write(entity.Symbol);
+            if (entity.IsVisible)
+            {
+                Console.SetCursorPosition(entity.X - X + xPos, entity.Y - Y + yPos);
+                Console.ForegroundColor = entity.SymbolColor;
+                Console.Write(entity.Symbol);
+            }
         }
 
         Console.CursorVisible = false;

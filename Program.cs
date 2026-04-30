@@ -1,8 +1,4 @@
-﻿World world;
-Player player;
-Screen screen;
-
-//   CODE FOR FINDING USABLE CHARACTERS
+﻿//   CODE FOR FINDING USABLE CHARACTERS
 //for (int x=0; x<200; x++)
 //{
 //    for (int i=0; i<100; i++)
@@ -11,11 +7,34 @@ Screen screen;
 //}
 //Console.ReadLine();
 
+// box chars ═║╔╗╚╝╠╣╦╩╬
+World world;
+Player player;
+Screen screen;
+
+(int score, Weapons heldWeapon) playerData = (0, 0); // Used to give the player correct info between levels
+
 LoadWorld("World_1.txt");
 
 Console.ForegroundColor = ConsoleColor.White;
+Console.Clear();
 
-Console.Write("Press any key to wake up... ");
+Console.Write(@"╔══════════════════════════════╦══════════════════════════════╗
+║                              ║  CS 1045: THE FINAL PROJECT  ║
+║                              ╠══════════════════════════════╣
+║                              ║                              ║
+║                              ║                              ║
+║                              ║                              ║
+║                              ║                              ║
+║                              ║                              ║
+║                              ║                              ║
+║                              ║                              ║
+║                              ║                              ║
+╚══════════════════════════════╩══════════════════════════════╝");
+
+WriteMenuLine(0, "(Set Terminal to Fullscreen)");
+WriteMenuLine(1, "Press any key to wake up.");
+
 
 ConsoleKeyInfo input;
 do
@@ -25,21 +44,23 @@ do
     
     // move the screen so the player is closer to center
     screen.Move((player.X - screen.X - (screen.Width / 2)) / (screen.Width / 5), (player.Y - screen.Y - (screen.Height / 2)) / (screen.Height / 5));
-    screen.Print(ConsoleColor.White);
+    screen.Print(1, 1, ConsoleColor.White);
 
-    // Check Player Collisions
+    WriteMenuLine(0, "Player Info");
+    WriteMenuLine(1, $"Score: {player.Score}");
+    WriteMenuLine(2, $"Holding: {player.HeldWeapon}");
+
+    // Check if Player died
     if (world.Entities[0].GetType() != typeof(Player))
     {
-        screen.Print(ConsoleColor.DarkGray);
+        screen.Print(1, 1, ConsoleColor.DarkGray); // gray out screen
 
-        Console.SetCursorPosition(0, screen.Height + 1);
-        Console.ForegroundColor = ConsoleColor.White;
-        Console.WriteLine("You died!");
-        Console.Write("Press any key to wake up: ");
+        WriteMenuLine(0, "You died!");
+        WriteMenuLine(1, "Press any key to wake up. ");
 
         Console.ReadKey(true);
 
-        LoadWorld("World_1.txt");
+        LoadWorld("World_1.txt"); // reset world
     }
 }
 
@@ -51,5 +72,12 @@ void LoadWorld(string filePath)
     player = (Player)world.Entities[0];
     screen = new(world, 30, 10, 0, 0);
 
-    Console.Clear();
+    (player.Score, player.HeldWeapon) = playerData; // set to last save point info
+}
+
+void WriteMenuLine(int lineIndex, string text)
+{
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.SetCursorPosition(32, 3 + lineIndex);
+    Console.Write($"{text, -30}");
 }

@@ -6,6 +6,8 @@ public abstract class MovableEntity
     public char Symbol { get; set; }
     public ConsoleColor SymbolColor { get; set; }
 
+    public bool IsVisible { get; set; } = true;
+
     public char[] Walls { get; protected set; } = ['█'];
 
     public MovableEntity(int x, int y, char symbol, ConsoleColor symbolColor, World world)
