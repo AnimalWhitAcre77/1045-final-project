@@ -6,6 +6,7 @@ public class World
     public int Height { get; set; }
     public char[,] Grid { get; set; }
     public List<MovableEntity> Entities { get; set; } = [];
+    public Stack<(int, MovableEntity)> EntitiesAddList { get; set; } = [];
     public Stack<MovableEntity> GarbageCollection { get; set; } = [];
 
     public World(int width, int height)
@@ -93,6 +94,13 @@ public class World
         foreach(MovableEntity entity in Entities)
         {
             entity.StepFrame(input);
+        }
+        
+        while (EntitiesAddList.Count() > 0)
+        {
+            (int, MovableEntity) newEntity = EntitiesAddList.Pop();
+            Entities.Insert(newEntity.Item1, newEntity.Item2);
+            newEntity.Item2.StepFrame(input);
         }
 
         while (GarbageCollection.Count() > 0)

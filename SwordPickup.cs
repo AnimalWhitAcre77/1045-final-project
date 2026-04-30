@@ -7,6 +7,7 @@ class SwordPickUp(int x, int y, char symbol, ConsoleColor symbolColor, World par
         if (X == player.X && Y == player.Y)
         {
             player.HeldWeapon = Weapons.Sword;
+            ParentWorld.EntitiesAddList.Push((1, new Sword(0, 0, '|', symbolColor, ParentWorld)));
             ParentWorld.GarbageCollection.Push(this);
         }
     }
