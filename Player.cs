@@ -36,6 +36,13 @@ class Player(int x, int y, char symbol, ConsoleColor symbolColor, World parentWo
         // Entity wall checks will go here
 
         Move(dX, dY);
+
+        // If holding sword, but there isn't a sword, spawn one
+        if (HeldWeapon == Weapons.Sword && !ParentWorld.Entities.Any(entity => entity.GetType() == typeof(Sword)))
+        {
+            ParentWorld.EntitiesAddList.Push((1, new Sword(0, 0, '|', ConsoleColor.Yellow, ParentWorld)));
+        }
+            
     }
 }
 

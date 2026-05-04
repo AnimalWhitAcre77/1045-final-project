@@ -66,7 +66,7 @@ do
 
         Console.ReadKey(true);
 
-        LoadWorld("World_1.txt"); // reset world
+        LoadWorld(worlds[currentWorld]); // reset world
     }
 
     // Check if the next world needs loaded

@@ -38,6 +38,7 @@ class Charger(int x, int y, char symbol, ConsoleColor symbolColor, int direction
             if (DeadlyEntityTypes.Contains(entity.GetType())) 
             {
                 // Add coins here once implemented
+                player.Score += 100;
                 ParentWorld.GarbageCollection.Push(this);
             }
         }
